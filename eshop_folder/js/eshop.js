@@ -12,7 +12,7 @@ class shoppingForm{
   this.mainlyIcons=["https://www.foodandwine.com/thmb/2k2Kq24_fMvHCyLMPRSNrpg5QdE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/beef-wellington-FT-RECIPE0321-c9a63fccde3b45889ad78fdad078153f.jpg",
     "https://thebigmansworld.com/wp-content/uploads/2023/10/meatballs-and-gravy-recipe.jpg",
     "https://littlesunnykitchen.com/wp-content/uploads/2021/10/Baked-Chicken-and-Potatoes-1-2.jpg",
-    "https://www.gressinghamduck.co.uk/wp-content/uploads/2022/11/tamarind-1440x686.jpg"];
+    "https://media02.stockfood.com/largepreviews/MzQ0NjQ4Nzkz/11117703-Duck-breast-with-orange-sauce-mashed-potatoes-and-Brussels-sprouts.jpg"];
   this.mainlyName=["Beef wellington","Meatballs in gravy","Marinated Chicken Fillet","Duck breast "];
   this.mainlyPrice=["17.00 €","12.00 €","12.00 €","15.00 €"];
   this.mainlyDescription=["Beef wellingtonn:Beef tenderloin cooked in a rich pastry crust <br> and embellished with pate de fois gras, truffles and cognac",
@@ -58,7 +58,8 @@ class shoppingForm{
           this.totalAmount();
           document.getElementById("myCard").classList.add("rotate-on-hover");
           setTimeout(()=>{
-              let buttons=Array.from(document.getElementsByClassName("btn")).filter((btn) => {!btn.classList.contains("dropdown-toggle") && btn.id!=="submitOrderButton" && btn.id!=="confirmButton" && btn.id!=="cancelButton"});
+              let buttons=Array.from(document.getElementsByClassName("btn")).filter((btn) => {return !btn.classList.contains("dropdown-toggle") && !btn.classList.contains("open-settings") 
+                && btn.id!=="submitOrderButton" && btn.id!=="confirmButton" && btn.id!=="cancelButton" && btn.id!=="startRotation" && btn.id!=="stopRotation"});
               for(let j=0;j<buttons.length;j++){
                   buttons[j].addEventListener("click",()=>{
                      document.getElementById("categoryTitle").innerHTML=`<h2>${buttons[j].innerHTML}</h2>`;
@@ -262,6 +263,7 @@ document.getElementById("stopRotation").addEventListener("click",()=>{
 document.getElementById("startRotation").addEventListener("click",()=>{
   document.getElementById("myCard").classList.add("rotate-on-hover");
 });
+
 
 
 
