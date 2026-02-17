@@ -1,0 +1,357 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: "Sofia", sans-serif;
+  background: linear-gradient(135deg, #fffb00, #a6ff00, #ff9900);
+}
+body button{
+  margin:10px;
+}
+ #start-shopping{
+  border-radius: 5px;
+  animation: glow 5s infinite alternate;
+}
+#lock {
+  font-size: 24px;
+  max-height:24px;
+}
+
+#mainMenu {
+  border-top-style: solid;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  position:relative;
+  animation:mainMenuStyle 10s infinite ease-in-out alternate;
+  transform-style: preserve-3d;
+  background: linear-gradient(to right, rgba(255, 208, 0, 0.8),rgb(255,100,0,0.8),rgba(51, 145, 43, 0.8));
+}
+
+#mainMenu li {
+  padding: 10px;
+  position: relative;
+}
+
+#mainMenu li a {
+  color: black;
+  margin-top: 3px;
+  white-space: nowrap;
+  text-shadow: 3px 3px 3px greenyellow;
+}
+
+.menu li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.menu li:hover::before {
+  transform: scaleX(1) ;
+}
+
+.backgroundImage {
+  background-size: cover;
+  background-position: center;
+  max-height: 100vh;
+  width:100%;
+  border-radius: 20px;
+  filter: sepia(0.5) contrast(120%) hue-rotate(20deg);
+}
+
+.card {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  border: 1px solid;
+  padding: 20px;
+  width: 90%;
+  overflow: auto;
+  background: linear-gradient(to right, rgba(255, 208, 0, 0.8),rgb(255,100,0,0.8),rgba(21, 255, 0, 0.8));
+}
+.rotate-on-hover:hover {
+  animation: cardRotation 2s linear;
+}
+
+table, th, td {
+  border: 1px solid black;
+  margin: 2px;
+  padding: 20px;
+}
+
+.myTable {
+  border: 1px solid black;
+  position: relative;
+  height: auto;
+  max-width: 100%;
+  border-radius: 25px;
+  display:flex;
+  justify-content:space-evenly;
+  padding: 0px;
+}
+.paddingTable{
+  border: 1px solid black;
+  position: relative;
+  height: auto;
+  max-width: 100%;
+  border-radius: 25px;
+  display:flex;
+  justify-content:space-evenly;
+  padding: 5px;
+}
+#dropdownCategories{
+  margin-right:1100px;
+}
+#emptyDiv {
+  height: auto;
+  position: relative;
+}
+.image {
+  height: 100px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 25px;
+}
+
+#rightTable {
+  max-height: 40vh;
+  overflow: auto;
+  position: relative;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  animation: cartAnimation 10s ease-in-out infinite alternate;
+}
+
+#rightTable .myTable,#rightTable .paddingTable {
+  white-space: nowrap;
+  overflow:hidden;
+}
+#rightTable .myTable,#rightTable .paddingTable:hover{
+  overflow:auto;
+}
+
+#leftTable {
+  max-height: 40vh;
+  overflow: auto;
+  position: relative;
+  padding: 20px;
+  text-align: left;
+}
+
+#leftTable .myTable,#leftTable .paddingTable {
+  white-space: nowrap;
+  overflow:hidden;
+}
+#leftTable .myTable,#leftTable .paddingTable:hover{
+  overflow:auto;
+}
+
+#categoryTitle {
+  white-space: nowrap;
+}
+
+#totalAmount{
+  border: 1px solid black;
+  padding: 10px;
+  background-color: white;
+  font-weight: bold;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  display: inline;
+}
+@media (max-width: 768px) {
+  #mainMenu{
+    flex-wrap: wrap;
+  }
+  table, th, td {
+    border: 1px solid black;
+    margin: 2px;
+    padding: 5px;
+  }
+  #leftTable .myTable,#leftTable .paddingTable {
+    white-space: nowrap;
+    overflow:auto;
+  }
+  #rightTable .myTable,#rightTable .paddingTable {
+    white-space: nowrap;
+    overflow:auto;
+  }
+  .card {
+    width: 95%;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 5px;
+  }
+  .card table {
+    display: block;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  .card table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .card table td {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  #dropdownCategories{
+    margin-right:0 !important;
+  }
+  .rotate-on-hover:hover{
+    animation:none !important;
+  }
+  .open-settings{
+    display: none;
+  }
+}
+.empty-cart {
+text-align: center;
+color: gray;
+font-size: 2em;
+font-weight: bold;
+padding: 20px;
+}
+@keyframes cartAnimation {
+  0% { background-color: rgb(60, 179, 113);}
+  25% { background-color: rgb(180, 170, 33);}  
+  50% { background-color: rgb(70, 190, 180);} 
+  75% { background-color: rgb(50, 150, 230);}  
+  100% { background-color: rgb(230, 62, 11);}  
+}
+
+@keyframes cardRotation {
+0%{transform: translate(-50%, -50%) rotate3d(1,1,1,0deg);}
+100%{transform: translate(-50%, -50%) rotate3d(1,1,1,360deg);}
+}
+@keyframes glow {
+  0% { box-shadow: 12px 12px 12px #4137d4; }
+  50% { box-shadow: 12px 12px 12px #cf37d4; }
+  100% { box-shadow: 12px 12px 12px #37d466; }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list-group-item {
+  animation: fadeIn 0.8s ease-in-out;
+  background-image: radial-gradient(rgba(209, 190, 14, 0.938) 10%,rgb(12, 218, 218) 20%,green 40%);
+  transition:1s ease-in-out;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+#rightTable .list-group-item:hover{
+  transform:skewX(10deg);
+}
+#leftTable .list-group-item:hover{
+  transform:translate(0,5px) scaleY(0.7) rotate(10deg);
+}
+.modal-footer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.modal-footer div{
+  flex-direction: row;
+  text-align: center;
+}
+button:focus, button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  padding-bottom:3px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  background: linear-gradient(to right, #a78528, #4d7e57);
+  color: white;
+}
+
+.btn:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+#loading {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 139, 139, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1050;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dropdown-item:focus, .dropdown-item:active {
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+@keyframes mainMenuStyle {
+  0% { box-shadow: 5px 5px 20px rgb(3, 58, 14); }
+  25% { box-shadow: 5px 5px 20px rgb(170, 110, 31); }
+  50% { box-shadow: 5px 5px 20px rgb(170, 40, 31); }
+  75% { box-shadow: 5px 5px 20px rgb(107, 31, 170); }
+  100% { box-shadow: 5px 5px 20px rgb(34, 156, 120); }
+}
+.open-settings {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+

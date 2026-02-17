@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/eshopStyle.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+        <title>Foods eshop</title>
+    </head>
+    <body>
+      <div class="container menu"id="mainMenu">
+        <ul class="nav justify-content-center hoverLine">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="eshop.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="active" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-current="active">Cheeses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#" aria-current="active">Meats</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#" aria-current="active">Provisions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#" aria-current="active">Find us</a>
+            </li>
+            <li class="nav-item">
+                  <a class="nav-link active" href="#" aria-current="active"><i id="lock" class="fa fa-lock"></i></a>
+            </li>
+        </ul>
+      </div> 
+      <img class="img-fluid backgroundImage"src="https://fountainavenuekitchen.com/wp-content/uploads/2021/04/2021_FAK_AsparagusCobbSalad_018.jpeg" alt="Background Image">
+          <div class="card container" id="myCard">
+            <table>
+              <tr>
+                <td colspan="3"><h1 style="text-align:center;">GOOD <span class="font-effect-shadow-multiple" style="font-style:italic; font-weight:normal;">to</span> EAT</h1></td>
+              </tr>
+              <tr>
+                <td>Savouries and sweets for <br> the gourmet in all of us</td>
+                <td><i class="fa-solid fa-fish fa-2xl" id="fish"></i></td>
+                <td id="start-shopping"><button onclick="shop.startShopping()" type="button" class="btn"><h2 style="color:black;">Start shopping></h2></button></td>
+              </tr>
+            </table>
+          </div>
+          <div id="loading">Processing your order...</div>
+          <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-title">Confirm or cancel order!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <h4>Your products</h4>
+                        <ul id="orderList"></ul>
+                    </div>
+                    <div class="modal-footer" id="modal-footer">
+                        <h2 id="finalAmount" ></h2>
+                        <div>
+                          <button type="button" id="confirmButton" class="btn btn-primary" onclick="confirmOrCancelOrder(event)">Confirm Order</button>
+                          <button type="button" id="cancelButton" class="btn btn-primary" onclick="confirmOrCancelOrder(event)">Cancel Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn open-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#settingsSidebar" aria-controls="settingsSidebar">
+          ⚙️ Rotation Settings
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="settingsSidebar" aria-labelledby="settingsSidebarLabel">
+          <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="settingsSidebarLabel">Card Rotation Settings</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+              <p>Control the card's rotation:</p>
+              <button class="btn btn-warning w-100 mb-2" id="stopRotation">Stop Rotation</button>
+              <button class="btn btn-success w-100" id="startRotation">Restart Rotation</button>
+          </div>
+        </div>
+          <script src="js/eshop.js"></script> 
+    </body>
+    </html>
+     
